@@ -1,0 +1,21 @@
+{
+  "assessment_date": "2026-10-26",
+  "scope": "Recent technical reading candidates, one representative publication per family; not a legal-status or FTO opinion.",
+  "patents": [
+    {"id":"R01","publication_number":"CN120910335B","primary_url":"https://patents.google.com/patent/CN120910335B/zh","group":"web_acquisition","selection":"previous_key_reference"},
+    {"id":"R02","publication_number":"CN122112328A","primary_url":"https://patents.google.com/patent/CN122112328A/zh","group":"web_acquisition","selection":"new_candidate"},
+    {"id":"R03","publication_number":"CN121167008B","primary_url":"https://patents.google.com/patent/CN121167008B/zh","group":"web_acquisition","selection":"previous_key_reference"},
+    {"id":"R04","publication_number":"CN121479039A","primary_url":"https://patents.google.com/patent/CN121479039A/zh","group":"web_acquisition","selection":"previous_key_reference"},
+    {"id":"R05","publication_number":"CN121960550A","primary_url":"https://patents.google.com/patent/CN121960550A/zh","group":"orchestration_context","selection":"new_candidate"},
+    {"id":"R06","publication_number":"CN122112050B","primary_url":"https://patents.google.com/patent/CN122112050B/zh","group":"orchestration_context","selection":"new_candidate"},
+    {"id":"R07","publication_number":"CN121766738A","primary_url":"https://patents.google.com/patent/CN121766738A/zh","group":"orchestration_context","selection":"previous_key_reference"},
+    {"id":"R08","publication_number":"CN121638260A","primary_url":"https://patents.google.com/patent/CN121638260A/zh","group":"orchestration_context","selection":"new_candidate"},
+    {"id":"R09","publication_number":"CN121351971B","primary_url":"https://patents.google.com/patent/CN121351971B/zh","group":"memory_reuse","selection":"previous_key_reference"},
+    {"id":"R10","publication_number":"CN121560934B","primary_url":"https://patents.google.com/patent/CN121560934B/zh","group":"memory_reuse","selection":"previous_key_reference"},
+    {"id":"R11","publication_number":"CN120892581B","primary_url":"https://patents.google.com/patent/CN120892581B/zh","group":"memory_reuse","selection":"new_candidate"},
+    {"id":"R12","publication_number":"CN121598989B","primary_url":"https://patents.google.com/patent/CN121598989B/zh","group":"memory_reuse","selection":"new_candidate"},
+    {"id":"R13","publication_number":"CN122154744A","primary_url":"https://patents.google.com/patent/CN122154744A/zh","group":"memory_reuse","selection":"new_candidate"},
+    {"id":"R14","publication_number":"US20260219870A1","primary_url":"https://patents.google.com/patent/US20260219870A1/en","group":"integrated_validation","selection":"new_candidate"},
+    {"id":"R15","publication_number":"WO2026090475A1","primary_url":"https://patents.google.com/patent/WO2026090475A1/en","group":"integrated_validation","selection":"previous_key_reference"}
+  ]
+}

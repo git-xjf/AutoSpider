@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "request_id": "fixture_news_001",
+  "start_urls": ["https://example.com/news"],
+  "objective": "Collect recent fixture news",
+  "fields": [
+    {"name": "title", "description": "Article title", "type": "string", "required": true, "page_scope": "list"},
+    {"name": "publish_time", "description": "Publication date", "type": "date", "required": true, "page_scope": "list"},
+    {"name": "url", "description": "Article URL", "type": "url", "required": true, "page_scope": "list", "extract": {"source": "attribute", "attribute": "href"}},
+    {"name": "author", "description": "Article author", "type": "string", "required": false, "page_scope": "detail"},
+    {"name": "content", "description": "Article body", "type": "string", "required": true, "page_scope": "detail"}
+  ],
+  "traversal": {
+    "mode": "list_detail",
+    "item_limit": 100,
+    "max_pages": 10,
+    "follow_detail": true,
+    "pagination": {"strategy": "click", "max_pages": 10}
+  },
+  "execution": {"sample_size": 3, "request_delay_ms": 100, "max_repair_attempts": 3, "headless": true},
+  "policy": {"allowed_domains": ["example.com"], "respect_robots": true, "allow_cross_domain_navigation": false},
+  "output": {"format": "json", "filename": "fixture_news.json"}
+}
+

@@ -1,0 +1,53 @@
+# Local credentials and generated configuration. Keep portable examples.
+.env
+.env.*
+!.env.example
+!**/.env.example
+.jwt_secret
+*.pem
+*.key
+*.p12
+*.pfx
+*.bak
+*.bak.*
+/deer-flow/config.yaml*
+/deer-flow/extensions_config.json*
+
+# Dependencies, caches and generated build output.
+.venv/
+venv/
+node_modules/
+.next/
+.pnpm-store/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.pytest_tmp*/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.tsbuildinfo
+
+# Per-machine state, private conversation history, databases and crawl outputs.
+.deer-flow/
+.research/
+.tmp/
+.vscode/
+.workbuddy/
+/chat-replay/
+/data/
+/runtime/
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+*.log
+
+# The customized deer-flow source IS tracked in this monorepo.
+# Legacy EasySpider checkouts and binary distributions remain external.
+/EasySpider/
+/EasySpider-release/

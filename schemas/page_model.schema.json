@@ -1,0 +1,615 @@
+{
+  "$defs": {
+    "DetailModel": {
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "default": false,
+          "title": "Enabled",
+          "type": "boolean"
+        },
+        "link_selector": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Link Selector"
+        },
+        "selector_type": {
+          "default": "xpath",
+          "enum": [
+            "xpath",
+            "css",
+            "jsonpath"
+          ],
+          "title": "Selector Type",
+          "type": "string"
+        },
+        "open_mode": {
+          "default": "same_tab",
+          "enum": [
+            "same_tab",
+            "new_tab"
+          ],
+          "title": "Open Mode",
+          "type": "string"
+        }
+      },
+      "title": "DetailModel",
+      "type": "object"
+    },
+    "FieldMapping": {
+      "additionalProperties": false,
+      "properties": {
+        "page_scope": {
+          "enum": [
+            "list",
+            "detail",
+            "single"
+          ],
+          "title": "Page Scope",
+          "type": "string"
+        },
+        "selector": {
+          "minLength": 1,
+          "title": "Selector",
+          "type": "string"
+        },
+        "selector_type": {
+          "default": "xpath",
+          "enum": [
+            "xpath",
+            "css",
+            "jsonpath"
+          ],
+          "title": "Selector Type",
+          "type": "string"
+        },
+        "frame_selector": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Frame Selector"
+        },
+        "frame_selector_type": {
+          "default": "css",
+          "enum": [
+            "xpath",
+            "css"
+          ],
+          "title": "Frame Selector Type",
+          "type": "string"
+        },
+        "fallbacks": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 2,
+          "title": "Fallbacks",
+          "type": "array"
+        },
+        "extract": {
+          "default": "text",
+          "enum": [
+            "text",
+            "attribute",
+            "html",
+            "url"
+          ],
+          "title": "Extract",
+          "type": "string"
+        },
+        "attribute": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Attribute"
+        },
+        "expected_examples": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 5,
+          "title": "Expected Examples",
+          "type": "array"
+        },
+        "confidence": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Confidence",
+          "type": "number"
+        }
+      },
+      "required": [
+        "page_scope",
+        "selector",
+        "confidence"
+      ],
+      "title": "FieldMapping",
+      "type": "object"
+    },
+    "HttpPagination": {
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "default": "none",
+          "enum": [
+            "none",
+            "page",
+            "cursor"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "parameter_location": {
+          "default": "query",
+          "enum": [
+            "query",
+            "json",
+            "form"
+          ],
+          "title": "Parameter Location",
+          "type": "string"
+        },
+        "page_param": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Page Param"
+        },
+        "start_page": {
+          "default": 1,
+          "minimum": 0,
+          "title": "Start Page",
+          "type": "integer"
+        },
+        "page_size_param": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Page Size Param"
+        },
+        "page_size": {
+          "anyOf": [
+            {
+              "maximum": 10000,
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Page Size"
+        },
+        "cursor_param": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cursor Param"
+        },
+        "next_cursor_path": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Next Cursor Path"
+        },
+        "initial_cursor": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Initial Cursor"
+        }
+      },
+      "title": "HttpPagination",
+      "type": "object"
+    },
+    "HttpRequestModel": {
+      "additionalProperties": false,
+      "properties": {
+        "method": {
+          "default": "GET",
+          "enum": [
+            "GET",
+            "POST"
+          ],
+          "title": "Method",
+          "type": "string"
+        },
+        "url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Url"
+        },
+        "response_format": {
+          "default": "auto",
+          "enum": [
+            "auto",
+            "html",
+            "json"
+          ],
+          "title": "Response Format",
+          "type": "string"
+        },
+        "headers": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "maxProperties": 30,
+          "title": "Headers",
+          "type": "object"
+        },
+        "params": {
+          "additionalProperties": true,
+          "title": "Params",
+          "type": "object"
+        },
+        "json_body": {
+          "anyOf": [
+            {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            {
+              "items": {},
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Json Body"
+        },
+        "form_body": {
+          "anyOf": [
+            {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Form Body"
+        },
+        "pagination": {
+          "$ref": "#/$defs/HttpPagination"
+        },
+        "timeout_seconds": {
+          "default": 30,
+          "maximum": 120,
+          "minimum": 1,
+          "title": "Timeout Seconds",
+          "type": "number"
+        }
+      },
+      "title": "HttpRequestModel",
+      "type": "object"
+    },
+    "ListModel": {
+      "additionalProperties": false,
+      "properties": {
+        "container_selector": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Selector"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "item_selector": {
+          "$ref": "#/$defs/Selector"
+        }
+      },
+      "required": [
+        "item_selector"
+      ],
+      "title": "ListModel",
+      "type": "object"
+    },
+    "PagePagination": {
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "default": "none",
+          "enum": [
+            "none",
+            "click",
+            "url",
+            "infinite_scroll"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "selector": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Selector"
+        },
+        "selector_type": {
+          "default": "xpath",
+          "enum": [
+            "xpath",
+            "css"
+          ],
+          "title": "Selector Type",
+          "type": "string"
+        },
+        "fallbacks": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 2,
+          "title": "Fallbacks",
+          "type": "array"
+        },
+        "url_template": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Url Template"
+        },
+        "scroll_count": {
+          "default": 1,
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Scroll Count",
+          "type": "integer"
+        }
+      },
+      "title": "PagePagination",
+      "type": "object"
+    },
+    "Selector": {
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "default": "xpath",
+          "enum": [
+            "xpath",
+            "css",
+            "jsonpath"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "value": {
+          "minLength": 1,
+          "title": "Value",
+          "type": "string"
+        }
+      },
+      "required": [
+        "value"
+      ],
+      "title": "Selector",
+      "type": "object"
+    },
+    "WaitModel": {
+      "additionalProperties": false,
+      "properties": {
+        "page_ready_selector": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Page Ready Selector"
+        },
+        "selector_type": {
+          "default": "xpath",
+          "enum": [
+            "xpath",
+            "css",
+            "jsonpath"
+          ],
+          "title": "Selector Type",
+          "type": "string"
+        },
+        "timeout_seconds": {
+          "default": 10,
+          "maximum": 120,
+          "minimum": 1,
+          "title": "Timeout Seconds",
+          "type": "integer"
+        }
+      },
+      "title": "WaitModel",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": "0.1",
+      "default": "0.1",
+      "title": "Version",
+      "type": "string"
+    },
+    "url": {
+      "title": "Url",
+      "type": "string"
+    },
+    "page_type": {
+      "enum": [
+        "SINGLE",
+        "LIST",
+        "LIST_DETAIL",
+        "PAGINATED_LIST",
+        "UNKNOWN"
+      ],
+      "title": "Page Type",
+      "type": "string"
+    },
+    "confidence": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Confidence",
+      "type": "number"
+    },
+    "recommended_mode": {
+      "default": "playwright",
+      "enum": [
+        "http_html",
+        "http_api",
+        "playwright"
+      ],
+      "title": "Recommended Mode",
+      "type": "string"
+    },
+    "http_request": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/HttpRequestModel"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "list": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ListModel"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "fields": {
+      "additionalProperties": {
+        "$ref": "#/$defs/FieldMapping"
+      },
+      "title": "Fields",
+      "type": "object"
+    },
+    "detail": {
+      "$ref": "#/$defs/DetailModel"
+    },
+    "pagination": {
+      "$ref": "#/$defs/PagePagination"
+    },
+    "waits": {
+      "$ref": "#/$defs/WaitModel"
+    },
+    "fingerprint": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Fingerprint"
+    },
+    "uncertainty": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Uncertainty",
+      "type": "array"
+    },
+    "evidence": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Evidence",
+      "type": "array"
+    }
+  },
+  "required": [
+    "url",
+    "page_type",
+    "confidence",
+    "fields"
+  ],
+  "title": "PageModel",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://autospider.local/schema/page_model.schema.json"
+}

@@ -1,0 +1,64 @@
+scheduler:
+  enabled: true
+
+agents_api:
+  enabled: true
+
+token_budget:
+  enabled: false
+  max_tokens: 200000
+  warn_threshold: 0.7
+  hard_stop_threshold: 1.0
+
+tool_search:
+  enabled: true
+  auto_promote_top_k: 2
+
+skills:
+  deferred_discovery: true
+
+mcp_tasks:
+  enabled: true
+
+subagents:
+  timeout_seconds: 300
+  max_turns: 16
+  max_total_per_run: 2
+  custom_agents:
+    web-analyst:
+      description: Read-only webpage structure, repeated-block and selector specialist
+      system_prompt: "BOOTSTRAP_REPLACES_FROM_deerflow/agents/web-analyst/SYSTEM.md"
+      tools:
+        - autospider_probe_open
+        - autospider_probe_http
+        - autospider_probe_http_select
+        - autospider_probe_snapshot
+        - autospider_probe_network
+        - autospider_network_jsonpath_test
+        - autospider_probe_close
+        - autospider_selector_test
+        - autospider_memory_lookup_site
+      skills:
+        - webpage-analysis
+        - selector-engineering
+        - transport-selection
+      model: inherit
+      max_turns: 12
+      timeout_seconds: 300
+    qa-repair:
+      description: Crawl-result quality auditor and minimal CrawlPlan repair specialist
+      system_prompt: "BOOTSTRAP_REPLACES_FROM_deerflow/agents/qa-repair/SYSTEM.md"
+      tools:
+        - autospider_execution_result_summary
+        - autospider_qa_validate_execution
+        - autospider_execution_logs
+        - autospider_probe_http_select
+        - autospider_selector_test
+        - autospider_probe_snapshot
+        - autospider_qa_validate
+      skills:
+        - crawl-validation
+        - selector-engineering
+      model: inherit
+      max_turns: 10
+      timeout_seconds: 300

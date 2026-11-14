@@ -1,0 +1,9 @@
+{
+  "repository": "https://github.com/bytedance/deer-flow.git",
+  "base_commit": "9ce6fdcb2252ea005b4fa98ca50bd3857e1f681a",
+  "license": "MIT",
+  "layout": "vendored-source-in-AutoSpider-monorepo",
+  "snapshot_date": "2026-11-15",
+  "local_customizations_included": true,
+  "note": "Preserve LICENSE and local AutoSpider changes. UPSTREAM.lock records the reviewed upstream baseline; the AutoSpider Git HEAD is not the upstream DeerFlow revision."
+}

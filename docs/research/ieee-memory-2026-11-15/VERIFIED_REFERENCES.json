@@ -1,0 +1,449 @@
+{
+  "checked_at": "2026-11-15",
+  "selection": "Seven method papers plus two surveys; 2025-2026 journal issues. Online dates and preprint dates differ.",
+  "papers": [
+    {
+      "id": "P01",
+      "title": "Meta-Memory for Large Language Models",
+      "authors": [
+        {
+          "given": "Bin",
+          "family": "Liang"
+        },
+        {
+          "given": "Cai",
+          "family": "Ke"
+        },
+        {
+          "given": "Runcong",
+          "family": "Zhao"
+        },
+        {
+          "given": "Qinglin",
+          "family": "Zhu"
+        },
+        {
+          "given": "Lin",
+          "family": "Gui"
+        },
+        {
+          "given": "Yue",
+          "family": "Yu"
+        },
+        {
+          "given": "Hui",
+          "family": "Wang"
+        },
+        {
+          "given": "Ruifeng",
+          "family": "Xu"
+        },
+        {
+          "given": "Kam-Fai",
+          "family": "Wong"
+        }
+      ],
+      "journal": "IEEE Transactions on Audio, Speech and Language Processing",
+      "year": 2026,
+      "volume": "34",
+      "issue": null,
+      "pages": "2774-2787",
+      "doi": "10.1109/taslpro.2026.3692286",
+      "publisher_url": "https://ieeexplore.ieee.org/document/11515167/",
+      "verification": "Crossref exact DOI lookup, title and IEEE Transactions container checked",
+      "checked_at": "2026-11-15",
+      "crossref_url": "https://api.crossref.org/works/10.1109/taslpro.2026.3692286",
+      "method_source": "https://hlt.hitsz.edu.cn/info/1001/1662.htm",
+      "reading_depth": "author overview + submission excerpt; publisher full text unavailable",
+      "journal_full_text_comparison_completed": false
+    },
+    {
+      "id": "P02",
+      "title": "FinMem: A Performance-Enhanced LLM Trading Agent With Layered Memory and Character Design",
+      "authors": [
+        {
+          "given": "Yangyang",
+          "family": "Yu"
+        },
+        {
+          "given": "Haohang",
+          "family": "Li"
+        },
+        {
+          "given": "Zhi",
+          "family": "Chen"
+        },
+        {
+          "given": "Yuechen",
+          "family": "Jiang"
+        },
+        {
+          "given": "Yang",
+          "family": "Li"
+        },
+        {
+          "given": "Jordan W.",
+          "family": "Suchow"
+        },
+        {
+          "given": "Denghui",
+          "family": "Zhang"
+        },
+        {
+          "given": "Khaldoun",
+          "family": "Khashanah"
+        }
+      ],
+      "journal": "IEEE Transactions on Big Data",
+      "year": 2025,
+      "volume": "11",
+      "issue": "6",
+      "pages": "3443-3459",
+      "doi": "10.1109/tbdata.2025.3593370",
+      "publisher_url": "https://ieeexplore.ieee.org/document/11112648/",
+      "verification": "Crossref exact DOI lookup, title and IEEE Transactions container checked",
+      "checked_at": "2026-11-15",
+      "crossref_url": "https://api.crossref.org/works/10.1109/tbdata.2025.3593370",
+      "method_source": "https://arxiv.org/html/2311.13743v2",
+      "reading_depth": "public preprint method; journal first-page metadata",
+      "journal_full_text_comparison_completed": false
+    },
+    {
+      "id": "P03",
+      "title": "JARVIS-1: Open-World Multi-Task Agents With Memory-Augmented Multimodal Language Models",
+      "authors": [
+        {
+          "given": "Zihao",
+          "family": "Wang"
+        },
+        {
+          "given": "Shaofei",
+          "family": "Cai"
+        },
+        {
+          "given": "Anji",
+          "family": "Liu"
+        },
+        {
+          "given": "Yonggang",
+          "family": "Jin"
+        },
+        {
+          "given": "Jinbing",
+          "family": "Hou"
+        },
+        {
+          "given": "Bowei",
+          "family": "Zhang"
+        },
+        {
+          "given": "Haowei",
+          "family": "Lin"
+        },
+        {
+          "given": "Zhaofeng",
+          "family": "He"
+        },
+        {
+          "given": "Zilong",
+          "family": "Zheng"
+        },
+        {
+          "given": "Yaodong",
+          "family": "Yang"
+        },
+        {
+          "given": "Xiaojian",
+          "family": "Ma"
+        },
+        {
+          "given": "Yitao",
+          "family": "Liang"
+        }
+      ],
+      "journal": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+      "year": 2025,
+      "volume": "47",
+      "issue": "3",
+      "pages": "1894-1907",
+      "doi": "10.1109/tpami.2024.3511593",
+      "publisher_url": "https://ieeexplore.ieee.org/document/10778628/",
+      "verification": "Crossref exact DOI lookup, title and IEEE Transactions container checked",
+      "checked_at": "2026-11-15",
+      "crossref_url": "https://api.crossref.org/works/10.1109/tpami.2024.3511593",
+      "method_source": "https://arxiv.org/html/2311.05997v3",
+      "reading_depth": "public preprint method and memory ablation",
+      "journal_full_text_comparison_completed": false
+    },
+    {
+      "id": "P04",
+      "title": "LMAgent: A Large-Scale Multimodal Agents Society for Multi-User Simulation",
+      "authors": [
+        {
+          "given": "Yijun",
+          "family": "Liu"
+        },
+        {
+          "given": "Wu",
+          "family": "Liu"
+        },
+        {
+          "given": "Xiaoyan",
+          "family": "Gu"
+        },
+        {
+          "given": "Xiaodong",
+          "family": "He"
+        },
+        {
+          "given": "Yong",
+          "family": "Rui"
+        },
+        {
+          "given": "Yongdong",
+          "family": "Zhang"
+        }
+      ],
+      "journal": "IEEE Transactions on Multimedia",
+      "year": 2026,
+      "volume": "28",
+      "issue": null,
+      "pages": "2668-2680",
+      "doi": "10.1109/tmm.2026.3651078",
+      "publisher_url": "https://ieeexplore.ieee.org/document/11329188/",
+      "verification": "Crossref exact DOI lookup, title and IEEE Transactions container checked",
+      "checked_at": "2026-11-15",
+      "crossref_url": "https://api.crossref.org/works/10.1109/tmm.2026.3651078",
+      "method_source": "https://arxiv.org/html/2412.09237v2",
+      "reading_depth": "public preprint fast-memory method and ablation",
+      "journal_full_text_comparison_completed": false
+    },
+    {
+      "id": "P05",
+      "title": "GCAgent: Long-Video Understanding via Schematic and Narrative Episodic Memory",
+      "authors": [
+        {
+          "given": "Jeong Hun",
+          "family": "Yeo"
+        },
+        {
+          "given": "Sangyun",
+          "family": "Chung"
+        },
+        {
+          "given": "Sungjune",
+          "family": "Park"
+        },
+        {
+          "given": "Dae Hoe",
+          "family": "Kim"
+        },
+        {
+          "given": "Jinyoung",
+          "family": "Moon"
+        },
+        {
+          "given": "Yong Man",
+          "family": "Ro"
+        }
+      ],
+      "journal": "IEEE Transactions on Multimedia",
+      "year": 2026,
+      "volume": "28",
+      "issue": null,
+      "pages": "15084-15096",
+      "doi": "10.1109/tmm.2026.3724344",
+      "publisher_url": "https://ieeexplore.ieee.org/document/11656365/",
+      "verification": "Crossref exact DOI lookup, title and IEEE Transactions container checked",
+      "checked_at": "2026-11-15",
+      "crossref_url": "https://api.crossref.org/works/10.1109/tmm.2026.3724344",
+      "method_source": "https://arxiv.org/html/2511.12027v1",
+      "reading_depth": "public preprint method and token-compression analysis",
+      "journal_full_text_comparison_completed": false
+    },
+    {
+      "id": "P06",
+      "title": "Memory-Augmented Architecture for Long-Term Context Handling in Large Language Models",
+      "authors": [
+        {
+          "given": "Haseeb Ullah Khan",
+          "family": "Shinwari"
+        },
+        {
+          "given": "Muhammad",
+          "family": "Usama"
+        }
+      ],
+      "journal": "IEEE Transactions on Artificial Intelligence",
+      "year": 2026,
+      "volume": "7",
+      "issue": "10",
+      "pages": "5830-5837",
+      "doi": "10.1109/tai.2026.3701680",
+      "publisher_url": "https://ieeexplore.ieee.org/document/11554975/",
+      "verification": "Crossref exact DOI lookup, title and IEEE Transactions container checked",
+      "checked_at": "2026-11-15",
+      "crossref_url": "https://api.crossref.org/works/10.1109/tai.2026.3701680",
+      "method_source": "https://arxiv.org/html/2506.18271v1",
+      "reading_depth": "public preprint method and pruning table",
+      "journal_full_text_comparison_completed": false
+    },
+    {
+      "id": "P07",
+      "title": "Empowering Large Language Models to Set Up Knowledge Retrieval Indexing via Self-Learning",
+      "authors": [
+        {
+          "given": "Simin",
+          "family": "Niu"
+        },
+        {
+          "given": "Mengwei",
+          "family": "Wang"
+        },
+        {
+          "given": "Xun",
+          "family": "Liang"
+        },
+        {
+          "given": "Zhiyu",
+          "family": "Li"
+        },
+        {
+          "given": "Sensen",
+          "family": "Zhang"
+        },
+        {
+          "given": "Shichao",
+          "family": "Song"
+        },
+        {
+          "given": "Hanyu",
+          "family": "Wang"
+        },
+        {
+          "given": "Jiawei",
+          "family": "Yang"
+        },
+        {
+          "given": "Feiyu",
+          "family": "Xiong"
+        },
+        {
+          "given": "Chenyang",
+          "family": "Xi"
+        }
+      ],
+      "journal": "IEEE Transactions on Knowledge and Data Engineering",
+      "year": 2026,
+      "volume": "38",
+      "issue": "3",
+      "pages": "1710-1724",
+      "doi": "10.1109/tkde.2025.3649907",
+      "publisher_url": "https://ieeexplore.ieee.org/document/11320578/",
+      "verification": "Crossref exact DOI lookup, title and IEEE Transactions container checked",
+      "checked_at": "2026-11-15",
+      "crossref_url": "https://api.crossref.org/works/10.1109/tkde.2025.3649907",
+      "method_source": "https://arxiv.org/html/2405.16933v1",
+      "reading_depth": "publisher abstract + earlier public preprint + official repo",
+      "journal_full_text_comparison_completed": false
+    },
+    {
+      "id": "P08",
+      "title": "Lifelong Learning of Large Language Model Based Agents: A Roadmap",
+      "authors": [
+        {
+          "given": "Junhao",
+          "family": "Zheng"
+        },
+        {
+          "given": "Chengming",
+          "family": "Shi"
+        },
+        {
+          "given": "Xidi",
+          "family": "Cai"
+        },
+        {
+          "given": "Qiuke",
+          "family": "Li"
+        },
+        {
+          "given": "Duzhen",
+          "family": "Zhang"
+        },
+        {
+          "given": "Chenxing",
+          "family": "Li"
+        },
+        {
+          "given": "Dong",
+          "family": "Yu"
+        },
+        {
+          "given": "Qianli",
+          "family": "Ma"
+        }
+      ],
+      "journal": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+      "year": 2026,
+      "volume": "48",
+      "issue": "5",
+      "pages": "5552-5571",
+      "doi": "10.1109/tpami.2025.3650546",
+      "publisher_url": "https://ieeexplore.ieee.org/document/11328884/",
+      "verification": "Crossref exact DOI lookup, title and IEEE Transactions container checked",
+      "checked_at": "2026-11-15",
+      "crossref_url": "https://api.crossref.org/works/10.1109/tpami.2025.3650546",
+      "method_source": "https://arxiv.org/abs/2501.07278",
+      "reading_depth": "publisher and preprint abstracts; survey",
+      "journal_full_text_comparison_completed": false
+    },
+    {
+      "id": "P09",
+      "title": "A Survey on Autonomy-Induced Security Risks in Large Model-Based Agents",
+      "authors": [
+        {
+          "given": "Hang",
+          "family": "Su"
+        },
+        {
+          "given": "Jun",
+          "family": "Luo"
+        },
+        {
+          "given": "Chang",
+          "family": "Liu"
+        },
+        {
+          "given": "Xiao",
+          "family": "Yang"
+        },
+        {
+          "given": "Yichi",
+          "family": "Zhang"
+        },
+        {
+          "given": "Yinpeng",
+          "family": "Dong"
+        },
+        {
+          "given": "Jun",
+          "family": "Zhu"
+        }
+      ],
+      "journal": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+      "year": 2026,
+      "volume": "48",
+      "issue": "10",
+      "pages": "11382-11401",
+      "doi": "10.1109/tpami.2026.3688650",
+      "publisher_url": "https://ieeexplore.ieee.org/document/11498611/",
+      "verification": "Crossref exact DOI lookup, title and IEEE Transactions container checked",
+      "checked_at": "2026-11-15",
+      "crossref_url": "https://api.crossref.org/works/10.1109/tpami.2026.3688650",
+      "method_source": "https://ieeexplore.ieee.org/abstract/document/11498611/",
+      "reading_depth": "publisher abstract; survey",
+      "journal_full_text_comparison_completed": false
+    }
+  ]
+}

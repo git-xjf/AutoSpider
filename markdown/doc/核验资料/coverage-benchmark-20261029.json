@@ -1,0 +1,111 @@
+{
+  "experiment": "minority-template validation coverage",
+  "records": 10,
+  "sample_size": 5,
+  "contiguous_two_record_windows": {
+    "total": 9,
+    "prefix_detected": 5,
+    "boundary_spread_detected": 8
+  },
+  "cases": [
+    {
+      "case": "tail_template_transition",
+      "failing_indices": [
+        8,
+        9
+      ],
+      "prefix_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "boundary_spread_indices": [
+        0,
+        2,
+        5,
+        7,
+        9
+      ],
+      "legacy_global": {
+        "prefix_status": "PASS",
+        "boundary_spread_status": "PASS",
+        "full_status": "PASS"
+      },
+      "coverage_certificate": {
+        "prefix_status": "PASS",
+        "boundary_spread_status": "FAIL",
+        "full_status": "FAIL",
+        "full_failed_pairs": 1,
+        "evidence_requests": 1
+      }
+    },
+    {
+      "case": "middle_template_island",
+      "failing_indices": [
+        4,
+        5
+      ],
+      "prefix_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "boundary_spread_indices": [
+        0,
+        2,
+        5,
+        7,
+        9
+      ],
+      "legacy_global": {
+        "prefix_status": "PASS",
+        "boundary_spread_status": "PASS",
+        "full_status": "PASS"
+      },
+      "coverage_certificate": {
+        "prefix_status": "FAIL",
+        "boundary_spread_status": "FAIL",
+        "full_status": "FAIL",
+        "full_failed_pairs": 1,
+        "evidence_requests": 1
+      }
+    },
+    {
+      "case": "single_unsampled_outlier",
+      "failing_indices": [
+        8
+      ],
+      "prefix_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "boundary_spread_indices": [
+        0,
+        2,
+        5,
+        7,
+        9
+      ],
+      "legacy_global": {
+        "prefix_status": "PASS",
+        "boundary_spread_status": "PASS",
+        "full_status": "PASS"
+      },
+      "coverage_certificate": {
+        "prefix_status": "PASS",
+        "boundary_spread_status": "PASS",
+        "full_status": "FAIL",
+        "full_failed_pairs": 1,
+        "evidence_requests": 1
+      }
+    }
+  ],
+  "scope_note": "Synthetic deterministic regression for the concrete false-PASS mechanism; it is not a real-site accuracy or patentability claim."
+}

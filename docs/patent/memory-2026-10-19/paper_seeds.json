@@ -1,0 +1,14 @@
+[
+  {"id":"L01","arxiv_id":"2409.07429","topic":"workflow induction","relevance":"成功经验归纳、在线工作流记忆与跨任务复用的基础对照。"},
+  {"id":"L02","arxiv_id":"2508.06433","topic":"procedural memory update","relevance":"构建、检索、更新程序记忆，失败轨迹修订已有记忆。"},
+  {"id":"L03","arxiv_id":"2602.01869","topic":"executable skill and admission","relevance":"激活/执行/终止条件、失败归因和验证准入；早期版本名ProcMEM，当前名Skill-Pro。"},
+  {"id":"L04","arxiv_id":"2609.03340","topic":"dependency scoped revalidation","relevance":"输入版本及动作依赖限定复验，是选择性重新验证的强近似对照。"},
+  {"id":"L05","arxiv_id":"2609.00243","topic":"fine grained invalidation","relevance":"版本戳、缓存有效性和细粒度失效；区分服务端明确版本条件与网页无版本条件。"},
+  {"id":"L06","arxiv_id":"2609.33517","topic":"source bound validity","relevance":"来源/适用条件/角色约束、显隐式失效和有界恢复视图。"},
+  {"id":"L07","arxiv_id":"2606.23127","topic":"memory lifecycle","relevance":"轨迹与程序版本绑定、诊断、验证晋升/回滚与生命周期。"},
+  {"id":"L08","arxiv_id":"2608.21867","topic":"persistent verification metadata","relevance":"验证信号作为持久治理元数据，压缩只增加验证分数或可信状态的空间。"},
+  {"id":"L09","arxiv_id":"2608.10502","topic":"dependency rollback repair","relevance":"错误记忆的依赖传播、保留独立支持及选择性重放。"},
+  {"id":"L10","arxiv_id":"2509.25140","topic":"success and failure experience","relevance":"从成功与失败中蒸馏推理记忆；不能仅以失败经验存储命名新颖点。"},
+  {"id":"L11","arxiv_id":"2308.10144","topic":"experiential learning","relevance":"无需参数更新的经验积累和知识检索基础。"},
+  {"id":"L12","arxiv_id":"1106.4872","crossref_doi":"10.1613/jair.1145","topic":"classic wrapper maintenance","relevance":"经典wrapper验证与重新归纳；arXiv收录日期不能当作原始发表年份。"}
+]

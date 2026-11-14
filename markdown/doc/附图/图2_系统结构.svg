@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="1050" viewBox="0 0 1040 1050">
+  <title>图2 系统及多智能体实施环境示意图</title>
+  <defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto-start-reverse"><path d="M0 0 L9 4.5 L0 9 Z" fill="black"/></marker></defs>
+  <rect width="1040" height="1050" fill="white"/>
+  <g fill="white" stroke="black" stroke-width="2">
+    <rect x="45" y="50" width="245" height="90" stroke-dasharray="7 5"/>
+    <rect x="380" y="50" width="240" height="90" stroke-dasharray="7 5"/>
+    <rect x="710" y="50" width="245" height="90" stroke-dasharray="7 5"/>
+    <rect x="320" y="205" width="670" height="745"/>
+    <rect x="380" y="250" width="240" height="90"/>
+    <rect x="380" y="390" width="240" height="90"/>
+    <rect x="380" y="530" width="240" height="90"/>
+    <rect x="710" y="530" width="245" height="90"/>
+    <rect x="380" y="680" width="240" height="90"/>
+    <rect x="380" y="820" width="240" height="90"/>
+  </g>
+  <g fill="none" stroke="black" stroke-width="2" marker-end="url(#arrow)">
+    <path d="M500 140 V250"/>
+    <path d="M500 340 V390"/>
+    <path d="M500 480 V530"/>
+    <path d="M500 620 V680"/>
+    <path d="M500 770 V820"/>
+    <path d="M620 575 H710"/>
+    <path d="M955 575 H1010 V175 H650 V120 H620"/>
+  </g>
+  <g fill="none" stroke="black" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)">
+    <path d="M290 95 H380"/>
+    <path d="M620 95 H710"/>
+  </g>
+  <g font-family="Microsoft YaHei,SimSun,sans-serif" font-size="23" fill="black" text-anchor="middle">
+    <text x="167" y="85">170 页面分析模块</text>
+    <text x="167" y="118">选择器与页面证据</text>
+    <text x="500" y="85">160 协调模块</text>
+    <text x="500" y="118">组织任务与委派</text>
+    <text x="832" y="85">180 诊断模块</text>
+    <text x="832" y="118">失败分析与修复建议</text>
+    <text x="655" y="232">自动采集执行服务</text>
+    <text x="500" y="286">190 规则执行器</text>
+    <text x="500" y="319">样本／最终结果</text>
+    <text x="500" y="426">110 执行结果获取</text>
+    <text x="500" y="459">记录、阶段与总数</text>
+    <text x="500" y="566">120 分层校验</text>
+    <text x="500" y="599">字段判定与观察范围</text>
+    <text x="832" y="566">130 补证请求生成</text>
+    <text x="832" y="599">实际失败地址与字段</text>
+    <text x="500" y="716">140 记忆提交控制</text>
+    <text x="500" y="749">通过、最终阶段、范围</text>
+    <text x="500" y="856">150 规则记忆库</text>
+    <text x="500" y="889">选择器与工作流</text>
+    <text x="832" y="165">校验回执</text>
+    <text x="235" y="990">虚线框：可选多智能体实施环境</text>
+    <text x="520" y="1030">图2</text>
+  </g>
+</svg>

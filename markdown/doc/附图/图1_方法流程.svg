@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="1180" viewBox="0 0 920 1180">
+  <title>图1 方法流程示意图</title>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="black"/></marker></defs>
+  <rect width="920" height="1180" fill="white"/>
+  <g fill="white" stroke="black" stroke-width="2">
+    <rect x="65" y="35" width="470" height="100"/>
+    <rect x="65" y="180" width="470" height="95"/>
+    <rect x="65" y="320" width="470" height="95"/>
+    <rect x="65" y="460" width="470" height="95"/>
+    <path d="M300 600 L535 675 L300 750 L65 675 Z"/>
+    <rect x="610" y="630" width="250" height="105"/>
+    <path d="M300 805 L535 895 L300 985 L65 895 Z"/>
+    <rect x="610" y="845" width="250" height="100"/>
+    <rect x="110" y="1040" width="380" height="80"/>
+  </g>
+  <g fill="none" stroke="black" stroke-width="2" marker-end="url(#arrow)">
+    <path d="M300 135 V180"/>
+    <path d="M300 275 V320"/>
+    <path d="M300 415 V460"/>
+    <path d="M300 555 V600"/>
+    <path d="M535 675 H610"/>
+    <path d="M735 735 V845"/>
+    <path d="M300 750 V805"/>
+    <path d="M535 895 H610"/>
+    <path d="M300 985 V1040"/>
+  </g>
+  <g font-family="Microsoft YaHei,SimSun,sans-serif" font-size="23" fill="black" text-anchor="middle">
+    <text x="300" y="70">S101 获取字段规范、规则与记录</text>
+    <text x="300" y="108">取得阶段标识及实际输出总数 N</text>
+    <text x="300" y="216">S102 归一化网页地址</text>
+    <text x="300" y="251">按路由分层标识划分记录</text>
+    <text x="300" y="356">S103 逐分层、逐必填字段</text>
+    <text x="300" y="391">计算空值比例并判定失败</text>
+    <text x="300" y="496">S104 生成分层字段校验记录</text>
+    <text x="300" y="531">保留观察范围、校验数 n 和失败总数</text>
+    <text x="300" y="683">存在失败字段对？</text>
+    <text x="735" y="666">S105 从实际失败记录</text>
+    <text x="735" y="703">生成定向补证请求</text>
+    <text x="300" y="866">S106 综合校验通过，</text>
+    <text x="300" y="900">属于最终阶段，</text>
+    <text x="300" y="934">n ≥ N 且未策略阻断？</text>
+    <text x="735" y="885">不执行本次规则</text>
+    <text x="735" y="920">自动提交</text>
+    <text x="300" y="1089">写入采集规则及对应工作流记忆</text>
+    <text x="570" y="660">是</text>
+    <text x="570" y="880">否</text>
+    <text x="325" y="786">否</text>
+    <text x="325" y="1022">是</text>
+    <text x="460" y="1160">图1</text>
+  </g>
+</svg>

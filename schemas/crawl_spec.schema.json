@@ -1,0 +1,395 @@
+{
+  "$defs": {
+    "ExecutionSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "mode": {
+          "default": "auto",
+          "enum": [
+            "auto",
+            "http_html",
+            "http_api",
+            "playwright"
+          ],
+          "title": "Mode",
+          "type": "string"
+        },
+        "sample_size": {
+          "default": 10,
+          "maximum": 50,
+          "minimum": 1,
+          "title": "Sample Size",
+          "type": "integer"
+        },
+        "sample_strategy": {
+          "default": "boundary_spread",
+          "enum": [
+            "prefix",
+            "boundary_spread"
+          ],
+          "title": "Sample Strategy",
+          "type": "string"
+        },
+        "request_delay_ms": {
+          "default": 1000,
+          "minimum": 0,
+          "title": "Request Delay Ms",
+          "type": "integer"
+        },
+        "max_repair_attempts": {
+          "default": 3,
+          "maximum": 5,
+          "minimum": 0,
+          "title": "Max Repair Attempts",
+          "type": "integer"
+        },
+        "headless": {
+          "default": true,
+          "title": "Headless",
+          "type": "boolean"
+        },
+        "max_run_seconds": {
+          "default": 1800,
+          "maximum": 86400,
+          "minimum": 1,
+          "title": "Max Run Seconds",
+          "type": "integer"
+        },
+        "max_output_bytes": {
+          "default": 100000000,
+          "minimum": 1,
+          "title": "Max Output Bytes",
+          "type": "integer"
+        }
+      },
+      "title": "ExecutionSpec",
+      "type": "object"
+    },
+    "ExtractSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "default": "text",
+          "enum": [
+            "text",
+            "attribute",
+            "html",
+            "url"
+          ],
+          "title": "Source",
+          "type": "string"
+        },
+        "attribute": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Attribute"
+        }
+      },
+      "title": "ExtractSpec",
+      "type": "object"
+    },
+    "FieldSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z_][A-Za-z0-9_]*$",
+          "title": "Name",
+          "type": "string"
+        },
+        "description": {
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "string",
+            "integer",
+            "number",
+            "boolean",
+            "date",
+            "datetime",
+            "url",
+            "html"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "required": {
+          "title": "Required",
+          "type": "boolean"
+        },
+        "page_scope": {
+          "default": "auto",
+          "enum": [
+            "auto",
+            "list",
+            "detail",
+            "single"
+          ],
+          "title": "Page Scope",
+          "type": "string"
+        },
+        "extract": {
+          "$ref": "#/$defs/ExtractSpec"
+        },
+        "normalize": {
+          "$ref": "#/$defs/NormalizeSpec"
+        }
+      },
+      "required": [
+        "name",
+        "description",
+        "type",
+        "required"
+      ],
+      "title": "FieldSpec",
+      "type": "object"
+    },
+    "NormalizeSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "trim": {
+          "default": true,
+          "title": "Trim",
+          "type": "boolean"
+        },
+        "regex": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Regex"
+        },
+        "date_format": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Date Format"
+        }
+      },
+      "title": "NormalizeSpec",
+      "type": "object"
+    },
+    "OutputSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "format": {
+          "default": "json",
+          "enum": [
+            "json",
+            "csv",
+            "xlsx"
+          ],
+          "title": "Format",
+          "type": "string"
+        },
+        "filename": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Filename"
+        }
+      },
+      "title": "OutputSpec",
+      "type": "object"
+    },
+    "PaginationSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "strategy": {
+          "default": "auto",
+          "enum": [
+            "auto",
+            "none",
+            "click",
+            "url",
+            "infinite_scroll"
+          ],
+          "title": "Strategy",
+          "type": "string"
+        },
+        "max_pages": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Max Pages"
+        }
+      },
+      "title": "PaginationSpec",
+      "type": "object"
+    },
+    "PolicySpec": {
+      "additionalProperties": false,
+      "properties": {
+        "allowed_domains": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Allowed Domains",
+          "type": "array"
+        },
+        "respect_robots": {
+          "default": true,
+          "title": "Respect Robots",
+          "type": "boolean"
+        },
+        "allow_cross_domain_navigation": {
+          "default": false,
+          "title": "Allow Cross Domain Navigation",
+          "type": "boolean"
+        },
+        "block_private_networks": {
+          "default": true,
+          "title": "Block Private Networks",
+          "type": "boolean"
+        }
+      },
+      "title": "PolicySpec",
+      "type": "object"
+    },
+    "TraversalSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "mode": {
+          "default": "auto",
+          "enum": [
+            "auto",
+            "single",
+            "list",
+            "list_detail"
+          ],
+          "title": "Mode",
+          "type": "string"
+        },
+        "item_limit": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Item Limit"
+        },
+        "max_pages": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Max Pages"
+        },
+        "follow_detail": {
+          "default": false,
+          "title": "Follow Detail",
+          "type": "boolean"
+        },
+        "pagination": {
+          "$ref": "#/$defs/PaginationSpec"
+        }
+      },
+      "title": "TraversalSpec",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": "0.1",
+      "default": "0.1",
+      "title": "Version",
+      "type": "string"
+    },
+    "request_id": {
+      "minLength": 1,
+      "title": "Request Id",
+      "type": "string"
+    },
+    "start_urls": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Start Urls",
+      "type": "array"
+    },
+    "objective": {
+      "minLength": 1,
+      "title": "Objective",
+      "type": "string"
+    },
+    "fields": {
+      "items": {
+        "$ref": "#/$defs/FieldSpec"
+      },
+      "minItems": 1,
+      "title": "Fields",
+      "type": "array"
+    },
+    "traversal": {
+      "$ref": "#/$defs/TraversalSpec"
+    },
+    "execution": {
+      "$ref": "#/$defs/ExecutionSpec"
+    },
+    "policy": {
+      "$ref": "#/$defs/PolicySpec"
+    },
+    "output": {
+      "$ref": "#/$defs/OutputSpec"
+    }
+  },
+  "required": [
+    "request_id",
+    "start_urls",
+    "objective",
+    "fields",
+    "traversal",
+    "output"
+  ],
+  "title": "CrawlSpec",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://autospider.local/schema/crawl_spec.schema.json"
+}

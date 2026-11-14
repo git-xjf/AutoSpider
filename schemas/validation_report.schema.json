@@ -1,0 +1,446 @@
+{
+  "$defs": {
+    "CoverageCertificate": {
+      "additionalProperties": false,
+      "properties": {
+        "scope": {
+          "const": "observed_records",
+          "default": "observed_records",
+          "title": "Scope",
+          "type": "string"
+        },
+        "url_field": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Url Field"
+        },
+        "required_null_rate_ceiling": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Required Null Rate Ceiling",
+          "type": "number"
+        },
+        "strata": {
+          "items": {
+            "$ref": "#/$defs/ValidationStratum"
+          },
+          "title": "Strata",
+          "type": "array"
+        },
+        "required_stratum_field_pairs": {
+          "minimum": 0,
+          "title": "Required Stratum Field Pairs",
+          "type": "integer"
+        },
+        "failed_stratum_field_pairs": {
+          "minimum": 0,
+          "title": "Failed Stratum Field Pairs",
+          "type": "integer"
+        },
+        "complete": {
+          "description": "Whether required fields pass within observed records; does not certify unobserved pages or omitted records.",
+          "title": "Complete",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "required_null_rate_ceiling",
+        "required_stratum_field_pairs",
+        "failed_stratum_field_pairs",
+        "complete"
+      ],
+      "title": "CoverageCertificate",
+      "type": "object"
+    },
+    "EvidenceRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "stratum": {
+          "title": "Stratum",
+          "type": "string"
+        },
+        "fields": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Fields",
+          "type": "array"
+        },
+        "representative_urls": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 2,
+          "title": "Representative Urls",
+          "type": "array"
+        },
+        "page_scope": {
+          "enum": [
+            "list",
+            "detail",
+            "single",
+            "mixed"
+          ],
+          "title": "Page Scope",
+          "type": "string"
+        },
+        "max_samples": {
+          "maximum": 3,
+          "minimum": 1,
+          "title": "Max Samples",
+          "type": "integer"
+        },
+        "max_chars": {
+          "maximum": 4000,
+          "minimum": 400,
+          "title": "Max Chars",
+          "type": "integer"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "stratum",
+        "fields",
+        "page_scope",
+        "max_samples",
+        "max_chars",
+        "reason"
+      ],
+      "title": "EvidenceRequest",
+      "type": "object"
+    },
+    "RepairPatch": {
+      "additionalProperties": false,
+      "properties": {
+        "operation": {
+          "enum": [
+            "REPLACE_SELECTOR",
+            "ADD_FALLBACK_SELECTOR",
+            "CHANGE_ITEM_CONTAINER",
+            "CHANGE_PAGE_SCOPE",
+            "CHANGE_DETAIL_NAVIGATION",
+            "CHANGE_PAGINATION",
+            "ADD_WAIT",
+            "REQUEST_REANALYSIS"
+          ],
+          "title": "Operation",
+          "type": "string"
+        },
+        "target": {
+          "title": "Target",
+          "type": "string"
+        },
+        "old_value": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Old Value"
+        },
+        "new_value": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "New Value"
+        },
+        "page_scope": {
+          "anyOf": [
+            {
+              "enum": [
+                "list",
+                "detail",
+                "single"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Page Scope"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reason"
+        }
+      },
+      "required": [
+        "operation",
+        "target"
+      ],
+      "title": "RepairPatch",
+      "type": "object"
+    },
+    "StratumFieldCoverage": {
+      "additionalProperties": false,
+      "properties": {
+        "field": {
+          "title": "Field",
+          "type": "string"
+        },
+        "observed_count": {
+          "minimum": 0,
+          "title": "Observed Count",
+          "type": "integer"
+        },
+        "null_count": {
+          "minimum": 0,
+          "title": "Null Count",
+          "type": "integer"
+        },
+        "null_rate": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Null Rate",
+          "type": "number"
+        }
+      },
+      "required": [
+        "field",
+        "observed_count",
+        "null_count",
+        "null_rate"
+      ],
+      "title": "StratumFieldCoverage",
+      "type": "object"
+    },
+    "ValidationIssue": {
+      "additionalProperties": false,
+      "properties": {
+        "field": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Field"
+        },
+        "type": {
+          "title": "Type",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "evidence": {
+          "additionalProperties": true,
+          "title": "Evidence",
+          "type": "object"
+        },
+        "suspected_root_cause": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Suspected Root Cause"
+        }
+      },
+      "required": [
+        "type",
+        "severity"
+      ],
+      "title": "ValidationIssue",
+      "type": "object"
+    },
+    "ValidationMetrics": {
+      "additionalProperties": false,
+      "properties": {
+        "required_field_coverage": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Required Field Coverage",
+          "type": "number"
+        },
+        "required_field_null_rate": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Required Field Null Rate",
+          "type": "number"
+        },
+        "duplicate_rate": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Duplicate Rate",
+          "type": "number"
+        },
+        "semantic_score": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Semantic Score",
+          "type": "number"
+        },
+        "record_count": {
+          "minimum": 0,
+          "title": "Record Count",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "required_field_coverage",
+        "required_field_null_rate",
+        "duplicate_rate",
+        "semantic_score",
+        "record_count"
+      ],
+      "title": "ValidationMetrics",
+      "type": "object"
+    },
+    "ValidationStratum": {
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "title": "Key",
+          "type": "string"
+        },
+        "record_count": {
+          "minimum": 1,
+          "title": "Record Count",
+          "type": "integer"
+        },
+        "representative_urls": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 2,
+          "title": "Representative Urls",
+          "type": "array"
+        },
+        "fields": {
+          "items": {
+            "$ref": "#/$defs/StratumFieldCoverage"
+          },
+          "title": "Fields",
+          "type": "array"
+        }
+      },
+      "required": [
+        "key",
+        "record_count"
+      ],
+      "title": "ValidationStratum",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "status": {
+      "enum": [
+        "PASS",
+        "FAIL"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "overall_score": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Overall Score",
+      "type": "number"
+    },
+    "confidence": {
+      "default": 1.0,
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Confidence",
+      "type": "number"
+    },
+    "metrics": {
+      "$ref": "#/$defs/ValidationMetrics"
+    },
+    "issues": {
+      "items": {
+        "$ref": "#/$defs/ValidationIssue"
+      },
+      "title": "Issues",
+      "type": "array"
+    },
+    "warnings": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Warnings",
+      "type": "array"
+    },
+    "coverage_certificate": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/CoverageCertificate"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "evidence_requests": {
+      "items": {
+        "$ref": "#/$defs/EvidenceRequest"
+      },
+      "maxItems": 8,
+      "title": "Evidence Requests",
+      "type": "array"
+    },
+    "repair_patch": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/RepairPatch"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    }
+  },
+  "required": [
+    "status",
+    "overall_score",
+    "metrics"
+  ],
+  "title": "ValidationReport",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://autospider.local/schema/validation_report.schema.json"
+}

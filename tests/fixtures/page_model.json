@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "url": "https://example.com/news",
+  "page_type": "LIST_DETAIL",
+  "confidence": 0.95,
+  "list": {
+    "container_selector": {"type": "xpath", "value": "//main[@id='news-list']"},
+    "item_selector": {"type": "xpath", "value": "//article[contains(@class,'news-item')]"}
+  },
+  "fields": {
+    "title": {"page_scope": "list", "selector": ".//h2/a", "fallbacks": [".//a[contains(@class,'title')]"], "extract": "text", "confidence": 0.98},
+    "publish_time": {"page_scope": "list", "selector": ".//time", "extract": "text", "confidence": 0.95},
+    "url": {"page_scope": "list", "selector": ".//h2/a", "extract": "attribute", "attribute": "href", "confidence": 0.99},
+    "author": {"page_scope": "detail", "selector": "//span[contains(@class,'article-author')]", "extract": "text", "confidence": 0.9},
+    "content": {"page_scope": "detail", "selector": "//article[contains(@class,'content')]", "fallbacks": ["//div[contains(@class,'article-content')]"], "extract": "text", "confidence": 0.95}
+  },
+  "detail": {"enabled": true, "link_selector": ".//h2/a", "open_mode": "same_tab"},
+  "pagination": {"type": "click", "selector": "//a[contains(@class,'next')]", "fallbacks": ["//a[contains(.,'Next')]" ]},
+  "waits": {"page_ready_selector": "//article[contains(@class,'content')]", "timeout_seconds": 10},
+  "fingerprint": "e8b2efea039d5b72b297f60bb6dc777f055838462bfd7fd1329a6ec9343a2c30",
+  "evidence": ["item selector matched 10 articles", "title selector matched once per item"]
+}
+

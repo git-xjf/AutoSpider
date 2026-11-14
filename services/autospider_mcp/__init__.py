@@ -1,0 +1,1 @@
+"""Public AutoSpider MCP package."""

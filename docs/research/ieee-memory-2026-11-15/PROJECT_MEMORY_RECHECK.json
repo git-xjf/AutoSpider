@@ -1,0 +1,122 @@
+{
+  "executed_at": "2026-11-15",
+  "source_script": "scripts/probe_memory_patent_gaps.py",
+  "note": "Original probe assessment_date remains its historical 2026-10-19 constant. executed_at records this rerun. Isolated fixtures; no network, model or user database.",
+  "result": {
+    "assessment_date": "2026-10-19",
+    "probe_version": 1,
+    "execution_scope": "Pure in-memory validation and isolated temporary SQLite; no network, MCP server, or user database.",
+    "exit_policy": "Exit 0 means the probe completed; observed quality gaps are diagnostic results, not execution errors.",
+    "source_sha256": {
+      "packages/validator/coverage.py": "7e26bef386fb56d26fdcb6c668b2d6e2bcb5007b3ab3fda9af0e2598f9d154b8",
+      "packages/validator/report.py": "fac435a6005ddbba31e43912fd90b17d70017423c6f1415a68126e8c134ef0f7",
+      "packages/validator/semantic.py": "8c9f02b82f4339ed692526989597622141f24d337d77846a90698458c236c168",
+      "packages/site_memory/repository.py": "f205a32cb0d7df7f139a0c38031993790bcee483494af9f09dc9a2451aedb175",
+      "scripts/probe_memory_patent_gaps.py": "a858a031939793ad2d4b73c9a3431bd3035b1b0560fc923592bb8d79a0415d4f"
+    },
+    "validation_cases": [
+      {
+        "case": "same_route_two_of_ten_empty_bodies",
+        "fixture_truth": {
+          "expected_quality_decision": "FAIL",
+          "wrong_extraction_indices": [
+            8,
+            9
+          ],
+          "correct_body_exists_for_every_record": true,
+          "note": "Fixture truth is supplied by the probe, not inferred by the current validator."
+        },
+        "actual_validation": {
+          "status": "PASS",
+          "metrics": {
+            "required_field_coverage": 1.0,
+            "required_field_null_rate": 0.06666666666666667,
+            "duplicate_rate": 0.0,
+            "semantic_score": 1.0,
+            "record_count": 10
+          },
+          "coverage_scope": "observed_records",
+          "strata_count": 1,
+          "failed_stratum_field_pairs": 0,
+          "content_null_rates": [
+            {
+              "stratum": "example.test/news/{n}",
+              "null_rate": 0.2
+            }
+          ],
+          "issue_types": []
+        },
+        "quality_gap_observed": true
+      },
+      {
+        "case": "unique_nonempty_wrong_body_region",
+        "fixture_truth": {
+          "expected_quality_decision": "FAIL",
+          "wrong_extraction_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "correct_body_exists_for_every_record": true,
+          "note": "Fixture truth is supplied by the probe, not inferred by the current validator."
+        },
+        "actual_validation": {
+          "status": "PASS",
+          "metrics": {
+            "required_field_coverage": 1.0,
+            "required_field_null_rate": 0.0,
+            "duplicate_rate": 0.0,
+            "semantic_score": 1.0,
+            "record_count": 10
+          },
+          "coverage_scope": "observed_records",
+          "strata_count": 1,
+          "failed_stratum_field_pairs": 0,
+          "content_null_rates": [
+            {
+              "stratum": "example.test/news/{n}",
+              "null_rate": 0.0
+            }
+          ],
+          "issue_types": []
+        },
+        "quality_gap_observed": true
+      }
+    ],
+    "memory_case": {
+      "case": "manually_recorded_failure_does_not_change_workflow_ranking",
+      "database_scope": "isolated temporary SQLite; removed after the probe",
+      "record_failure_invoked_manually": true,
+      "production_automatic_failure_writeback_exercised": false,
+      "before": [
+        {
+          "id": 1,
+          "success_rate": 0.95
+        }
+      ],
+      "after": [
+        {
+          "id": 1,
+          "success_rate": 0.95
+        }
+      ],
+      "persisted_failure_count": 1,
+      "failures_bound_to_workflow": 0,
+      "same_top_workflow_after_failure": true,
+      "interpretation": "A failure log alone does not affect lookup ordering or scope eligibility. This does not prove production failure writeback occurred, nor execute a real workflow."
+    },
+    "limitations": [
+      "Desired quality FAIL is fixture truth, while the current validator intentionally permits up to 20% per-field nulls.",
+      "The wrong-region case supplies incorrect strings; it does not execute HTML extraction or estimate real-site error rates.",
+      "The repository ranking probe manually records a failure; production automatic writeback is not exercised.",
+      "No proposed memory control mechanism is implemented or evaluated by this probe."
+    ]
+  }
+}

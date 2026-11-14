@@ -1,0 +1,11 @@
+本轮 pytest 完成回执；完整测试计数以同目录 JUnit XML 为准。
+{"experiment": "actual_local_http_pipeline", "sample_strategy": "prefix", "wrong_selector": {"phase": "full", "evaluated_records": 10, "legacy_global_gate": "PASS", "stratum_gate": "FAIL", "global_required_null_rate": 0.06666666666666667, "failed_stratum_field_pairs": 1, "memory_committed": false, "http_list_requests": 2, "http_detail_requests": 15}, "repaired_selector": {"full_records": 10, "sample_gate": "PASS", "full_gate": "PASS", "memory_committed": true, "http_list_requests": 2, "http_detail_requests": 15}, "scope": "Controlled local HTTP fixture with an empty legacy selector slot; no model or public-site accuracy claim."}
+.{"experiment": "actual_local_http_pipeline", "sample_strategy": "boundary_spread", "wrong_selector": {"phase": "sample", "evaluated_records": 5, "legacy_global_gate": "PASS", "stratum_gate": "FAIL", "global_required_null_rate": 0.06666666666666667, "failed_stratum_field_pairs": 1, "memory_committed": false, "http_list_requests": 1, "http_detail_requests": 5}, "repaired_selector": {"full_records": 10, "sample_gate": "PASS", "full_gate": "PASS", "memory_committed": true, "http_list_requests": 2, "http_detail_requests": 15}, "scope": "Controlled local HTTP fixture with an empty legacy selector slot; no model or public-site accuracy claim."}
+.
+============================== warnings summary ===============================
+..\..\..\conda_envs\mytorch\Lib\site-packages\pydantic_settings\sources\utils.py:47
+  D:\conda_envs\mytorch\Lib\site-packages\pydantic_settings\sources\utils.py:47: IncompleteFieldDefinitionWarning: Field 'lifespan' has an incomplete definition: its annotation contains an unresolved forward reference, so settings sources may fail to correctly resolve its value. Call `model_rebuild()` on the model where the field is defined, once all the referenced types are defined.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+20 passed, 1 warning in 8.78s

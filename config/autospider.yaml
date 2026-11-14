@@ -1,0 +1,18 @@
+version: "0.1"
+limits:
+  max_pages: 100
+  max_records: 10000
+  max_run_seconds: 1800
+  max_repair_attempts: 3
+  max_output_bytes: 100000000
+  max_probe_sessions: 4
+  browser_session_timeout_seconds: 300
+policy:
+  respect_robots: true
+  allow_cross_domain_navigation: false
+  block_private_networks: true
+  request_delay_ms: 1000
+memory:
+  database: data/site_memory.db
+  fingerprint_similarity_threshold: 1.0
+

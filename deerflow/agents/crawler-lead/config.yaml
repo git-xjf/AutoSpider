@@ -1,0 +1,31 @@
+description: Autonomous web-crawling orchestrator using the AutoSpider sample-first workflow
+prompt_profile: crawler_compact
+tool_names:
+  - task
+  - ask_clarification
+  - present_files
+  - read_file
+  - describe_skill
+preload_tools:
+  - autospider_memory_lookup_site
+  - autospider_crawl_reuse_workflow
+  - autospider_probe_http
+  - autospider_probe_http_select
+  - autospider_crawl_draft_create
+  - autospider_crawl_draft_execute
+skills:
+  - intelligent-crawling
+  - autospider-workflow
+  - crawl-validation
+  - transport-selection
+allowed_subagents:
+  - web-analyst
+  - qa-repair
+thinking_enabled: false
+lock_thinking_enabled: true
+force_subagent_enabled: true
+token_budget:
+  enabled: true
+  max_tokens: 200000
+  warn_threshold: 0.7
+  hard_stop_threshold: 1.0

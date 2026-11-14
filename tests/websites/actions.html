@@ -1,0 +1,6 @@
+<!doctype html><html><body>
+<input id="query"><select id="kind"><option value="all">All</option><option value="news">News</option></select>
+<div id="hover" onmouseenter="this.dataset.state='hovered'">Hover target</div>
+<button id="apply" onclick="document.querySelector('#result').textContent=document.querySelector('#query').value+'|'+document.querySelector('#kind').value+'|'+document.querySelector('#hover').dataset.state">Apply</button>
+<output id="result"></output>
+</body></html>

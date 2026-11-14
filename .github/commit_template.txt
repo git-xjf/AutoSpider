@@ -1,0 +1,6 @@
+# Title example: fix(memory): bind failures to the workflow version
+
+# Explain why this change was needed.
+# Explain the resulting behavior and the main change.
+# Record the checks actually run and any material limitations.
+# Optionally note whether the work was done on the dorm or office computer.

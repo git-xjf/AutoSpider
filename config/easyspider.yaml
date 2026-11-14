@@ -1,0 +1,9 @@
+mode: http
+base_url: http://127.0.0.1:8074
+http_timeout_seconds: 30
+target_version: 0.3.5
+home: ./EasySpider/ElectronJS
+data_root: ./EasySpider/ElectronJS/Data
+cli:
+  executable: ./EasySpider/ElectronJS/chrome_win64/easyspider_executestage.exe
+

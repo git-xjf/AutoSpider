@@ -1,0 +1,15 @@
+services:
+  autospider-mcp:
+    build: .
+    environment:
+      AUTOSPIDER_MCP_TRANSPORT: streamable-http
+      AUTOSPIDER_MCP_HOST: 0.0.0.0
+      AUTOSPIDER_MCP_PORT: 8000
+      AUTOSPIDER_MEMORY_DB: /app/data/site_memory.db
+      AUTOSPIDER_ENGINE: playwright
+      AUTOSPIDER_RUNTIME_ROOT: /app/data/playwright
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped

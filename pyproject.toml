@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "autospider-agent"
+version = "0.1.0"
+description = "Agentic hybrid HTTP, JSON API and Playwright crawler for DeerFlow 2.0"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "beautifulsoup4>=4.12",
+  "cssselect>=1.2",
+  "httpx>=0.27",
+  "jsonschema>=4.21",
+  "lxml>=5.0",
+  "mcp>=1.20",
+  "playwright>=1.48",
+  "pydantic>=2.9",
+  "pydantic-settings>=2.5",
+  "PyYAML>=6.0",
+  "tldextract>=5.3,<6",
+  "typer>=0.15",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=0.24", "respx>=0.22"]
+xlsx = ["openpyxl>=3.1"]
+
+[project.scripts]
+autospider = "packages.crawl_core.cli:app"
+autospider-mcp = "services.autospider_mcp.server:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["packages*", "services*"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+asyncio_mode = "auto"

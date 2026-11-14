@@ -1,0 +1,6 @@
+[
+  {"title": "Alpha launch", "publish_time": "2026-09-01", "url": "https://example.com/news/alpha", "author": "Alice", "content": "Alpha article body with enough meaningful text."},
+  {"title": "Beta release", "publish_time": "2026-09-02", "url": "https://example.com/news/beta", "author": "Bob", "content": "Beta article body with different meaningful text."},
+  {"title": "Gamma update", "publish_time": "2026-09-03", "url": "https://example.com/news/gamma", "author": "Carol", "content": "Gamma article body with another meaningful text."}
+]
+

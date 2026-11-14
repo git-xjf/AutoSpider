@@ -1,0 +1,18 @@
+<!doctype html><html><body>
+<div id="header"></div><div id="items"></div><div id="spinner"></div>
+<button id="more" onclick="more()">Load more</button>
+<script>
+document.querySelector('#header').textContent = 'unchanged header '.repeat(200);
+let count = 0;
+function append() {
+  for(let i=0; i<3; i++) {
+    count++;
+    document.querySelector('#items').insertAdjacentHTML('beforeend', '<article><a href="/detail/'+count+'">Title '+count+'</a></article>');
+  }
+}
+function more() {
+  document.querySelector('#spinner').textContent = 'Loading';
+  setTimeout(() => { append(); document.querySelector('#spinner').textContent = ''; }, 500);
+}
+setTimeout(append, 500);
+</script></body></html>

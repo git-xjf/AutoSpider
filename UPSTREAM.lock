@@ -1,0 +1,13 @@
+# Reviewed upstream revisions for AutoSpider V0.1.
+# Update only after compiler fixtures and the DeerFlow bootstrap test pass.
+
+EasySpider.repository=https://github.com/thespend/EasySpider.git
+EasySpider.commit=676486bc67108b8f7f483568e0e39b5c63dcb4ba
+EasySpider.task_profile=0.3.5
+EasySpider.license=AGPL-3.0
+
+DeerFlow.repository=https://github.com/bytedance/deer-flow.git
+DeerFlow.commit=9ce6fdcb2252ea005b4fa98ca50bd3857e1f681a
+DeerFlow.major=2
+DeerFlow.license=MIT
+

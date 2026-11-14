@@ -1,0 +1,10 @@
+{
+  "checked_on": "2026-10-20",
+  "scope": "Primary HTML archival only; claims analysis is in PRIOR_ART.md; no official legal-status audit",
+  "sources": [
+    {"publication_number":"US8190546B2","primary_url":"https://patents.google.com/patent/US8190546B2/en","topic":"source dependence in truth discovery"},
+    {"publication_number":"US9348891B2","primary_url":"https://patents.google.com/patent/US9348891B2/en","topic":"online fusion, source dependence and probe order"},
+    {"publication_number":"CN111954880B","primary_url":"https://patents.google.com/patent/CN111954880B/zh","topic":"source mutation, sink impact and execution trace"},
+    {"publication_number":"EP3776314B1","primary_url":"https://patents.google.com/patent/EP3776314B1/en","topic":"same family as CN111954880B; do not count as an independent invention"}
+  ]
+}

@@ -1,0 +1,487 @@
+{
+  "$defs": {
+    "HttpPagination": {
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "default": "none",
+          "enum": [
+            "none",
+            "page",
+            "cursor"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "parameter_location": {
+          "default": "query",
+          "enum": [
+            "query",
+            "json",
+            "form"
+          ],
+          "title": "Parameter Location",
+          "type": "string"
+        },
+        "page_param": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Page Param"
+        },
+        "start_page": {
+          "default": 1,
+          "minimum": 0,
+          "title": "Start Page",
+          "type": "integer"
+        },
+        "page_size_param": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Page Size Param"
+        },
+        "page_size": {
+          "anyOf": [
+            {
+              "maximum": 10000,
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Page Size"
+        },
+        "cursor_param": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cursor Param"
+        },
+        "next_cursor_path": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Next Cursor Path"
+        },
+        "initial_cursor": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Initial Cursor"
+        }
+      },
+      "title": "HttpPagination",
+      "type": "object"
+    },
+    "HttpRequestModel": {
+      "additionalProperties": false,
+      "properties": {
+        "method": {
+          "default": "GET",
+          "enum": [
+            "GET",
+            "POST"
+          ],
+          "title": "Method",
+          "type": "string"
+        },
+        "url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Url"
+        },
+        "response_format": {
+          "default": "auto",
+          "enum": [
+            "auto",
+            "html",
+            "json"
+          ],
+          "title": "Response Format",
+          "type": "string"
+        },
+        "headers": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "maxProperties": 30,
+          "title": "Headers",
+          "type": "object"
+        },
+        "params": {
+          "additionalProperties": true,
+          "title": "Params",
+          "type": "object"
+        },
+        "json_body": {
+          "anyOf": [
+            {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            {
+              "items": {},
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Json Body"
+        },
+        "form_body": {
+          "anyOf": [
+            {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Form Body"
+        },
+        "pagination": {
+          "$ref": "#/$defs/HttpPagination"
+        },
+        "timeout_seconds": {
+          "default": 30,
+          "maximum": 120,
+          "minimum": 1,
+          "title": "Timeout Seconds",
+          "type": "number"
+        }
+      },
+      "title": "HttpRequestModel",
+      "type": "object"
+    },
+    "Operation": {
+      "enum": [
+        "OPEN_URL",
+        "CLICK",
+        "EXTRACT",
+        "INPUT",
+        "CUSTOM",
+        "MOVE",
+        "LOOP_ELEMENTS",
+        "LOOP_PAGES",
+        "CONDITION",
+        "WAIT",
+        "BACK",
+        "SELECT",
+        "PRESS",
+        "SCROLL",
+        "SCREENSHOT",
+        "DOWNLOAD"
+      ],
+      "title": "Operation",
+      "type": "string"
+    },
+    "PlanStep": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "op": {
+          "$ref": "#/$defs/Operation"
+        },
+        "url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Url"
+        },
+        "selector": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Selector"
+        },
+        "relative_selector": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Relative Selector"
+        },
+        "selector_type": {
+          "default": "xpath",
+          "enum": [
+            "xpath",
+            "css",
+            "jsonpath"
+          ],
+          "title": "Selector Type",
+          "type": "string"
+        },
+        "frame_selector": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Frame Selector"
+        },
+        "frame_selector_type": {
+          "default": "css",
+          "enum": [
+            "xpath",
+            "css"
+          ],
+          "title": "Frame Selector Type",
+          "type": "string"
+        },
+        "fallbacks": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 2,
+          "title": "Fallbacks",
+          "type": "array"
+        },
+        "field": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Field"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "enum": [
+                "text",
+                "attribute",
+                "html",
+                "url"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source"
+        },
+        "attribute": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Attribute"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "code": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Code"
+        },
+        "seconds": {
+          "anyOf": [
+            {
+              "maximum": 120,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Seconds"
+        },
+        "max_iterations": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Max Iterations"
+        },
+        "body": {
+          "items": {
+            "$ref": "#/$defs/PlanStep"
+          },
+          "title": "Body",
+          "type": "array"
+        }
+      },
+      "required": [
+        "op"
+      ],
+      "title": "PlanStep",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": "0.1",
+      "default": "0.1",
+      "title": "Version",
+      "type": "string"
+    },
+    "name": {
+      "minLength": 1,
+      "title": "Name",
+      "type": "string"
+    },
+    "start_urls": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Start Urls",
+      "type": "array"
+    },
+    "execution_mode": {
+      "default": "playwright",
+      "enum": [
+        "http_html",
+        "http_api",
+        "playwright"
+      ],
+      "title": "Execution Mode",
+      "type": "string"
+    },
+    "http_request": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/HttpRequestModel"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "steps": {
+      "items": {
+        "$ref": "#/$defs/PlanStep"
+      },
+      "minItems": 1,
+      "title": "Steps",
+      "type": "array"
+    }
+  },
+  "required": [
+    "name",
+    "start_urls",
+    "steps"
+  ],
+  "title": "CrawlPlan",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://autospider.local/schema/crawl_plan.schema.json"
+}

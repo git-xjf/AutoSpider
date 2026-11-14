@@ -1,0 +1,80 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "operation": {
+      "enum": [
+        "REPLACE_SELECTOR",
+        "ADD_FALLBACK_SELECTOR",
+        "CHANGE_ITEM_CONTAINER",
+        "CHANGE_PAGE_SCOPE",
+        "CHANGE_DETAIL_NAVIGATION",
+        "CHANGE_PAGINATION",
+        "ADD_WAIT",
+        "REQUEST_REANALYSIS"
+      ],
+      "title": "Operation",
+      "type": "string"
+    },
+    "target": {
+      "title": "Target",
+      "type": "string"
+    },
+    "old_value": {
+      "anyOf": [
+        {},
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Old Value"
+    },
+    "new_value": {
+      "anyOf": [
+        {},
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "New Value"
+    },
+    "page_scope": {
+      "anyOf": [
+        {
+          "enum": [
+            "list",
+            "detail",
+            "single"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Page Scope"
+    },
+    "reason": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Reason"
+    }
+  },
+  "required": [
+    "operation",
+    "target"
+  ],
+  "title": "RepairPatch",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://autospider.local/schema/repair_patch.schema.json"
+}

@@ -1,0 +1,62 @@
+{
+  "assessment_date": "2026-10-29",
+  "scope": "Read-only fingerprints after the 20-test targeted verification; production database content not read",
+  "files": [
+    {
+      "path": "packages/validator/coverage.py",
+      "sha256": "7e26bef386fb56d26fdcb6c668b2d6e2bcb5007b3ab3fda9af0e2598f9d154b8"
+    },
+    {
+      "path": "packages/validator/report.py",
+      "sha256": "fac435a6005ddbba31e43912fd90b17d70017423c6f1415a68126e8c134ef0f7"
+    },
+    {
+      "path": "packages/validator/metrics.py",
+      "sha256": "2a63d87a8374f5320e420020d9a857cd8c4863837b2e645cbb350e93ff823a4b"
+    },
+    {
+      "path": "packages/crawl_core/models.py",
+      "sha256": "55cf85a59f12848aabc0e8b22a2a3a0a07a7eb5d8ed7acf0c46da883ade5463e"
+    },
+    {
+      "path": "packages/compiler/playwright.py",
+      "sha256": "dd25d6d077265766a72b114c1aa4be68db23f3364c86871af921fdbefc7638fd"
+    },
+    {
+      "path": "packages/crawl_core/drafts.py",
+      "sha256": "bda3569f05b4a7df329cf60ecc699616f0ab0420fc9ba5c25d3b58611928be2c"
+    },
+    {
+      "path": "services/easyspider_mcp/server.py",
+      "sha256": "d273047fec9d08da0e320eaefedcf2dfb346d0cf8cea18965400bf634713a226"
+    },
+    {
+      "path": "packages/site_memory/repository.py",
+      "sha256": "f205a32cb0d7df7f139a0c38031993790bcee483494af9f09dc9a2451aedb175"
+    },
+    {
+      "path": "tests/e2e/test_coverage_gate.py",
+      "sha256": "f7768f534354115f0aaad0d594b296cf24bc53786d25b0df6b19ab9e01adeb24"
+    },
+    {
+      "path": "tests/unit/test_coverage_validation.py",
+      "sha256": "cac2d23efd4145d1dffa2f3a91b3b421feecf361273d0894c50e355ba3f884dc"
+    },
+    {
+      "path": "tests/unit/test_validation_receipt.py",
+      "sha256": "78e97ba7678bc59fd23809f8bb4f6d277653ebe56b22d9496951f6efb87daca8"
+    },
+    {
+      "path": "tests/unit/test_mcp_draft_execution.py",
+      "sha256": "01abd13ad9d70ec14ee6cff08f0057fa2f92521e950823a9ca0881975fd48f97"
+    },
+    {
+      "path": "scripts/benchmark_verification_coverage.py",
+      "sha256": "9304b59975e56de7574878e44ce4b6218edcaf9cbf9e061856f89836103da02e"
+    },
+    {
+      "path": "data/site_memory.db",
+      "sha256": "b6bb171ea460c4a86e73a651269e42a382279185fa2ab6c6b44e7508fa26e504"
+    }
+  ]
+}

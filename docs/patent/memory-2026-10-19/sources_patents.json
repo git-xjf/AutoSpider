@@ -1,0 +1,148 @@
+{
+  "checked_on": "2026-10-19",
+  "scope": "Primary patent claim-text landscape for AutoSpider memory research; not a legal-status or freedom-to-operate audit",
+  "sources": [
+    {
+      "id": "P1",
+      "publication_number": "CN118333086B",
+      "title": "一种可自我进化的Agent程序记忆系统、智能体",
+      "filing_date": "2024-05-11",
+      "first_publication_date": "2024-07-12",
+      "publication_date": "2025-12-16",
+      "primary_url": "https://patents.google.com/patent/CN118333086B/zh",
+      "claims_locator": "Claims 1 (granted independent system claim), 2",
+      "summary": "授权权1已合并生成/debug测试、缓存/语义检索、子任务工具编排与执行反馈。",
+      "pressure_on_candidates": ["procedural_memory", "validated_memory_insertion", "multi_agent_workflow"],
+      "verification": "primary_granted_claims_read"
+    },
+    {
+      "id": "P2",
+      "publication_number": "CN121560934B",
+      "title": "任务结果复用方法及相应计算机设备和程序产品",
+      "filing_date": "2026-01-21",
+      "first_publication_date": "2026-02-24",
+      "publication_date": "2026-05-29",
+      "primary_url": "https://patents.google.com/patent/CN121560934B/zh",
+      "related_publication_url": "https://patents.google.com/patent/CN121560934A/zh",
+      "claims_locator": "B Claims 1, 4-6; compare A Claims 1, 6-8",
+      "summary": "链路结果复用；授权权4部分复用，权5源变化/到期复验，权6新旧版本链。",
+      "pressure_on_candidates": ["partial_reuse", "applicability_gate", "selective_revalidation", "version_lineage"],
+      "verification": "primary_granted_and_published_claims_read"
+    },
+    {
+      "id": "P3",
+      "publication_number": "CN119884347A",
+      "title": "智能体记忆数据处理方法、系统及非易失性存储介质",
+      "filing_date": "2024-12-23",
+      "first_publication_date": "2025-04-25",
+      "publication_date": "2025-04-25",
+      "primary_url": "https://patents.google.com/patent/CN119884347A/zh",
+      "claims_locator": "Claims 1, 2, 5-7",
+      "summary": "按时间/相关性更新历史记忆，区分冲突、无关与补充关系。",
+      "pressure_on_candidates": ["memory_scoring", "forgetting", "conflict_update"],
+      "verification": "primary_published_claims_read"
+    },
+    {
+      "id": "P4",
+      "publication_number": "CN121351971B",
+      "title": "基于经验路径图谱演化的智能体工具调用知识优化方法",
+      "filing_date": "2025-12-17",
+      "first_publication_date": "2026-01-16",
+      "publication_date": "2026-05-05",
+      "primary_url": "https://patents.google.com/patent/CN121351971B/zh",
+      "claims_locator": "Claims 1-6; description: graph maintenance and call-chain self-healing",
+      "description_reviewed": "图谱动态维护与调用链路自愈",
+      "summary": "成功调用经验图与向量表征；兼容校验、工具失效局部修复、成功后新路径。",
+      "pressure_on_candidates": ["tool_failure_repair", "dependency_validation", "experience_graph", "repair_commit"],
+      "verification": "primary_granted_claims_and_relevant_description_read"
+    },
+    {
+      "id": "P5",
+      "publication_number": "CN121766738A",
+      "title": "一种任务工作流处理方法、系统、计算机设备及存储介质",
+      "filing_date": "2025-12-18",
+      "first_publication_date": "2026-03-31",
+      "publication_date": "2026-03-31",
+      "primary_url": "https://patents.google.com/patent/CN121766738A/zh",
+      "claims_locator": "Claims 1, 2, 4-6, 9",
+      "summary": "按依赖编排智能体；历史工作流辅助，失败后改流，成功后保存。",
+      "pressure_on_candidates": ["historical_workflow", "multi_agent_memory", "failure_edit"],
+      "verification": "primary_published_claims_read"
+    },
+    {
+      "id": "P6",
+      "publication_number": "US20090204889A1",
+      "title": "Adaptive sampling of web pages for extraction",
+      "filing_date": "2008-02-13",
+      "first_publication_date": "2009-08-13",
+      "publication_date": "2009-08-13",
+      "primary_url": "https://patents.google.com/patent/US20090204889A1/en",
+      "claims_locator": "Claims 1, 5-7, 11-13; extraction-phase description",
+      "summary": "结构变体覆盖；空属性映射失败页和变异节点，选择代表页补标注。",
+      "pressure_on_candidates": ["field_failure_evidence", "representative_sampling", "budgeted_probe_selection"],
+      "verification": "primary_published_claims_and_extraction_description_read"
+    },
+    {
+      "id": "P7",
+      "publication_number": "CN100338609C",
+      "title": "包装器的维护方法",
+      "filing_date": "2004-09-08",
+      "first_publication_date": "2005-03-02",
+      "publication_date": "2007-09-19",
+      "primary_url": "https://patents.google.com/patent/CN100338609C/zh",
+      "claims_locator": "Claims 1-5",
+      "summary": "以旧数据项特征定位新HTML实体语义块并再生成抽取规则。",
+      "pressure_on_candidates": ["field_memory", "structural_drift_repair", "evidence_guided_relocation"],
+      "verification": "primary_granted_claims_read"
+    },
+    {
+      "id": "P8",
+      "publication_number": "US8762829B2",
+      "title": "Robust wrappers for web extraction",
+      "filing_date": "2008-12-24",
+      "first_publication_date": "2010-06-24",
+      "publication_date": "2014-06-24",
+      "primary_url": "https://patents.google.com/patent/US8762829B2/en",
+      "claims_locator": "Claims 1, 4-10",
+      "summary": "网页历史树变更概率模型用于选择持续有效概率更高的字段wrapper。",
+      "pressure_on_candidates": ["field_selector_robustness", "historical_drift_model", "failure_probability"],
+      "verification": "primary_granted_claims_read"
+    },
+    {
+      "id": "P9",
+      "publication_number": "EP1492027B1",
+      "title": "Registering for and retrieving database table change information that can be used to invalidate cache entries",
+      "priority_date": "2003-06-25",
+      "filing_date": "2004-06-18",
+      "first_publication_date": "2004-12-29",
+      "publication_date": "2009-09-30",
+      "primary_url": "https://patents.google.com/patent/EP1492027B1/en",
+      "claims_locator": "Claims 1, 10, 17-18",
+      "summary": "变化ID仅查变化表；依赖key传播并移除相应缓存部分。",
+      "pressure_on_candidates": ["fine_grained_invalidation", "dependency_propagation", "version_check"],
+      "verification": "primary_granted_claims_read"
+    },
+    {
+      "id": "P10",
+      "publication_number": "WO2026090475A1",
+      "title": "AI orchestrator",
+      "priority_date": "2024-10-24",
+      "filing_date": "2025-10-24",
+      "first_publication_date": "2026-04-30",
+      "first_publication_scope": "reviewed_PCT_publication_not_all_family",
+      "publication_date": "2026-04-30",
+      "primary_url": "https://patents.google.com/patent/WO2026090475A1/en",
+      "claims_locator": "Claims 1, 4 (dependent cache limitations), 8",
+      "summary": "依附编排系统的缓存权4含部分计算复用、正确性验证、上下文失效重算。",
+      "pressure_on_candidates": ["partial_cache_reuse", "independent_verifier", "context_invalidation"],
+      "verification": "primary_published_claims_read"
+    }
+  ],
+  "excluded_unverified": [
+    {
+      "publication": "CN122242560A",
+      "url_attempted": "https://patents.google.com/patent/CN122242560A/zh",
+      "reason": "Primary page retrieval error in this round; no claim conclusion derived from secondary summaries"
+    }
+  ]
+}
